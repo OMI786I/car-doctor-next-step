@@ -4,6 +4,7 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/styles/**/*.css", // Include your custom CSS path
   ],
   theme: {
     extend: {
@@ -18,7 +19,7 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#a991f7",
+          primary: "#ff3811",
           secondary: "#f6d860",
           accent: "#37cdbe",
           neutral: "#3d4451",

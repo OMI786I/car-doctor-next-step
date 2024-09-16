@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div>
       Hello Car Doctor
-      <button className="btn">Click ME!</button>
+      <button className="btn btn-primary">Click ME!</button>
     </div>
   );
 }
