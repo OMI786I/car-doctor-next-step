@@ -29,3 +29,6 @@ body {
 .btn-primary {
   @apply text-white;
 }
+.btn-primary.btn-primary:hover {
+  @apply text-white;
+}
