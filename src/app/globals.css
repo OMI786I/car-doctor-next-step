@@ -32,3 +32,7 @@ body {
 .btn-primary.btn-primary:hover {
   @apply text-white;
 }
+
+.text-primary {
+  color: #ff3811;
+}
