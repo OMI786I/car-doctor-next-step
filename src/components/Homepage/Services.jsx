@@ -1,6 +1,7 @@
 import React from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import { services } from "../../lib/services.js";
+import Image from "next/image.js";
 const Services = () => {
   console.log(services);
 
@@ -17,11 +18,17 @@ const Services = () => {
 
       {/**cards */}
 
-      <div className="grid grid-cols-3 gap-3 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-8">
         {services.map((res) => (
           <div className="card bg-base-100 w-96 shadow-xl" key={res._id}>
             <figure className="px-10 pt-10">
-              <img src={res.img} alt="Shoes" className="rounded-xl" />
+              <Image
+                height={200}
+                width={300}
+                src={res.img}
+                alt="Shoes"
+                className="rounded-xl"
+              />
             </figure>
             <div className="card-body ">
               <h2 className="card-title">{res.title}</h2>
