@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
+import Link from "next/link";
 
 const page = () => {
   const [showPassWord, setShowPassWord] = useState(false);
@@ -15,11 +16,11 @@ const page = () => {
     watch,
     formState: { errors },
   } = useForm();
-
+  const password = watch("password");
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className="grid grid-cols-2 justify-center items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 justify-center items-center">
       {/**image */}
 
       <Image
@@ -32,7 +33,7 @@ const page = () => {
       <div>
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl md:w-1/2">
-            <h1 className="font-bold text-3xl text-center">Registration</h1>
+            <h1 className="font-bold text-3xl text-center">Sign Up</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -63,28 +64,6 @@ const page = () => {
                 />
                 {errors.email && (
                   <span className="text-red-600">Email is required</span>
-                )}
-              </div>
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Blood Group</span>
-                </label>
-                <select
-                  {...register("blood", { required: true })}
-                  className="select select-bordered w-full max-w-xs"
-                >
-                  <option value="">Select a blood Group</option>
-                  <option value={"A+"}>A+</option>
-                  <option value={"A-"}>A-</option>
-                  <option value={"B+"}>B+</option>
-                  <option value={"B-"}>B-</option>
-                  <option value={"O+"}>O+</option>
-                  <option value={"O-"}>O-</option>
-                  <option value={"AB+"}>AB+</option>
-                  <option value={"AB-"}>AB-</option>
-                </select>
-                {errors.blood && (
-                  <span className="text-red-600">Blood group is required</span>
                 )}
               </div>
 
@@ -185,9 +164,12 @@ const page = () => {
             <p className="m-4">
               <small>
                 Already have an account?{" "}
-                <a className="text-blue-700 underline font-bold" to={"/login"}>
+                <Link
+                  className="text-blue-700 underline font-bold"
+                  href="/login"
+                >
                   Log in
-                </a>
+                </Link>
               </small>
             </p>
           </div>
