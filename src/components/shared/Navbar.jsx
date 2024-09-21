@@ -91,6 +91,9 @@ const Navbar = () => {
         <IoBagOutline />
         <CiSearch />
         <a className="btn btn-outline btn-primary">Appointment</a>
+        <a href="/login" className="btn  btn-primary">
+          Login
+        </a>
       </div>
     </div>
   );
